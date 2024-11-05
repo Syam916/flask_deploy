@@ -1,0 +1,31 @@
+<head>
+    <meta charset="UTF-8">
+    <title>Login</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/login.css') }}">
+</head>
+<body>
+    <div class="container">
+        <h2>Login</h2>
+        <form action="/" method="post">
+            <label for="username">Username:</label>
+            <input type="text" name="username" required><br><br>
+            <label for="password">Password:</label>
+            <input type="password" name="password" required><br><br>
+            <button type="submit">Login</button>
+        </form>
+        
+        <!-- Google Sign-In Button -->
+        <button class="google-btn" onclick="location.href='/google-login'">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/5/53/Google_%22G%22_Logo.svg" alt="Google Logo">
+            Sign in with Google
+        </button>
+
+        {% with messages = get_flashed_messages(with_categories=true) %}
+            {% if messages %}
+                {% for category, message in messages %}
+                    <div class="message {{ category }}">{{ message }}</div>
+                {% endfor %}
+            {% endif %}
+        {% endwith %}
+    </div>
+</body>
