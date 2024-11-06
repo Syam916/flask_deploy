@@ -1,0 +1,18 @@
+# Python cache and virtual environments
+__pycache__/
+*.py[cod]
+venv/
+
+# Environment variables
+.env
+
+# IDE/editor specific files
+.vscode/
+.idea/
+
+# OS generated files
+.DS_Store
+
+# Pytest or testing results
+.pytest_cache/
+*.log
